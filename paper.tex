@@ -10,6 +10,11 @@
 \usepackage{graphicx}
 \usepackage{xspace}
 \usepackage{subfigure}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[expert]{lucidabr}
+%\usepackage[utf8]{inputenc}
+
 \DeclareGraphicsExtensions{.pdf,.jpg,.png,.eps}
 \usepackage[usenames]{color}
 
@@ -91,17 +96,17 @@ models. Similar examination from the cloud-contaminated cases also
 show very high consistency between the two cloud-representation models
 : for example when used with the ECMWF model fields, both cloud
 representation/scattering models produce fewer Deep Convective Clouds
-(DCC), and warmer brightness temperatures for Marine Boundary Layer
-(MBL) clouds, than observed. Night time clear sky biases for a
+(DCC), and warmer Brightness Temperatures (BT) for Marine Boundary
+Layer (MBL) clouds, than observed. Night time clear sky biases for a
 spanning set of 41 AIRS channels are typically less than 0.5 K over
 the ocean, except for the ozone sounding channels where the biases can
 be as large as -1.5 K, and average to a $\sim$ 10\% ozone columnn
-deficiency. The average cloud forcing for night time all-sky ocean
-scenes is on the order of 10 K in the tropics and 13 K in the
-midlatitudes. Night time all-sky biases average to be on the order of
-1 K in the longwave (6-15 \um) AIRS spectrum, and larger in the
-shortwave (3-4 \um) region, suggesting the TwoSlab scattering
-algorithm is less accurate in the shortwave.
+deficiency. The average cloud forcing (converted to BT differences)
+for night time all-sky ocean scenes is on the order of 10 K in the
+tropics and 13 K in the midlatitudes. Night time all-sky biases
+average to be on the order of 1 K in the longwave (6-15 \um) AIRS
+spectrum, and larger in the shortwave (3-4 \um) region, suggesting the
+TwoSlab scattering algorithm is less accurate in the shortwave.
 
 \end{abstract}
 
@@ -125,7 +130,7 @@ instrumental drifts affect the assimilated data while updates to
 the model physics parametrization can affect the output geophysical
 fields \cite{mor:91, sau:13}.
 
-All the above reasons make it necessary both to validate the physics
+These reasons underline the importance of both validating the physics
 of the NWP models and to monitor the stability of the observational
 data. Weather observations can be divided into conventional- and
 satellite- based. Conventional \emph{in-situ} observations include
@@ -180,35 +185,34 @@ outgoing infrared radiation and re-radiate it downwards; conversely
 Deep Convective Clouds (DCC) have both cooling and warming effects
 which though large, cancel each other out.
 
-A recent study monitored 3 years of satellite biases using radiances
-computed with NWP fields \citep{sau:13}, but was limited to clear-sky
-scenes. In general NWP schemes can discard upto 75\% of the datellite
-data \cite{bau:10} due to unknown emissivity (land,ice,snow) and cloud
-contamination, the latter due to difficulties in fast accurate
-modelling of radiative transfer through clouds as well as to NWP cloud
-and moisture parameterization deficiencies. This paper uses radiative
-closure to compare one day's worth of high quality observational IR
-all-sky radiance dataset against radiances computed using NWP
-geophysical and cloud fields (both analysis and forecast) in two
-different cloud representation schemes. Key considerations are the
-accuracy and computational speed of the cloud scheme within the
-radiative transfer model(s) - modeling horizontal inhomogeneties of
-clouds requires multiple streams to simulate overlapping clouds
-extending vertically through the atmosphere places an extremely heavy
-computational burden on any radiative transfer model.
+A recent study monitored 3 years of clear-sky satellite biases using
+radiances computed with NWP fields \citep{sau:13}. NWP schemes can
+discard upto 75\% of the datellite data \cite{bau:10} due to unknown
+emissivity (land,ice,snow) and cloud contamination, the latter due to
+difficulties in fast accurate modelling of radiative transfer through
+clouds as well as to NWP cloud and moisture parameterization
+deficiencies. This paper uses radiative closure to compare one day's
+worth of high quality observational IR all-sky radiance dataset
+against radiances computed using NWP geophysical and cloud fields
+(both analysis and forecast) in two different cloud representation
+schemes. Key considerations are the accuracy and computational speed
+of the cloud scheme within the radiative transfer model(s) - modeling
+horizontal inhomogeneties of clouds requires multiple streams to
+simulate overlapping clouds extending vertically through the
+atmosphere, placing heavy computational burdens on any
+radiative transfer model.
 
-The instrument used here is the Atmospheric Infra-Red Sounder
-(AIRS)\citep{str:02*1}. AIRS was designed to provide improved
-temperature and humidity profiles for numerical weather prediction and
-long-term climate studies. With detectors spanning the 650 to 2700 \wn
-(or 3.7 to 15 \um) spectral region, AIRS radiances are sensitive both
-to the underlying geophysical state of the atmosphere (temperature,
-humidity, ozone and trace gas constituents and surface parameters)
+Data from the Atmospheric Infra-Red Sounder (AIRS) \citep{str:02*1} is
+used in this paper. AIRS was designed to provide improved temperature
+and humidity profiles for numerical weather prediction and long-term
+climate studies. Detectors spanning the 650 to 2700 \wn (or 3.7 to 15
+\um) spectral region make AIRS radiances sensitive both to the
+underlying geophysical state of the atmosphere (temperature, humidity,
+ozone and trace gas constituents and surface parameters)
 \citep{aum:02*2,str:02*2}, as well as to ice and water clouds
-\citep{kah:03*1,kah:05*1,wu:09} in the atmosphere. The radiances are
-also sensitive to large (effective diameter $\geq$ 1 um) aerosol
-particles such as mineral dust and volcanic ash \citep{mac:10,cla:10},
-though their effects are not considered here.
+\citep{kah:03*1,kah:05*1,wu:09}. The radiances are also sensitive to
+large aerosol particles such as mineral dust and volcanic ash
+\citep{mac:10,cla:10}, though their effects are not considered here.
 
 The NWP model assessed is that used by the European Center for Medium
 Range Weather Forecasts (ECMWF). This center provides operational
@@ -247,24 +251,24 @@ at least another 5 more years.
 
 AIRS has a 13.5 km nadir footprint from a $\sim$ 705 km orbit, and its
 radiances have been shown to be very stable and accurate
-\citep{aum:06}. However, a few of the AIRS detectors have deteriorated
-over the years, reducing the pool of channels to study. In addition
-many of the AIRS channels have similar weighting functions, making it
-un-necessary to compare observations versus simulations for all 2378
-channels. In this paper we mainly focus on AIRS channel 1291 (centered
-at 1231 \wn with a width of about 1 \wn), which is in the thermal
-infrared window region. In this spectral region, the channel clear sky
-weighting functions peak near the surface, as the clear sky
-atmospheric absorption is dominated by the water vapor continuum, weak
-water lines and lines due to some trace gases. In between the water
-lines, the total absorption is least in the 961 and 1231 \wn region
-(AIRS channels 903 and 1291). We chose Channel 1291 (1231 \wn) since
-it has less cloud/aerosol interference than Channel 903, and also
-because for column amounts of water larger than about 30 mm, the water
-amount dependance of the continuum coefficients means this channel has
-less water contamination than Channel 903.  AIRS channel number 2333
+\citep{aum:06}. A few AIRS detectors have deteriorated over time,
+reducing the available pool of channels to study. Many AIRS channels
+have similar weighting functions, making it un-necessary to compare
+observations versus simulations for all 2378 channels. In this paper
+we mainly focus on AIRS channel 1291 (centered at 1231 \wn with a
+width of about 1 \wn), which is in the thermal infrared window
+region. The window channel clear sky weighting
+functions peak near the surface, as the clear sky atmospheric
+absorption is dominated by the water vapor continuum, weak water lines
+and lines due to some trace gases. In between the water lines, the
+total absorption is least in the 961 and 1231 \wn region (AIRS
+channels 903 and 1291). We chose Channel 1291 (1231 \wn) since it has
+less cloud/aerosol interference than Channel 903, and also because for
+column amounts of water larger than about 30 mm, the water amount
+dependance of the continuum coefficients means this channel has less
+water contamination than Channel 903.  AIRS channel number 2333
 centered at 2616 \wn has even less water vapor contamination, but is
-avoided here since the simulated radiances additionally depend on an
+avoided since the simulated radiances additionally depend on an
 accurate knowledge of scattering phase functions, required to model
 solar scattering from clouds and aerosols.
 
@@ -304,7 +308,7 @@ scheme is based on \citep{tie:89} and does not predict individual
 convective clouds, but on a cell by cell basis models the physical
 effects such as momentum and energy transport to allow one of deep,
 shallow or mid-level convection. Clouds are handled by
-explicit equations for cloud ice and cloud water, and cloud cover;
+explicit equations for amount and cloud cover;
 radiation is divided into longwave and shortwave components and
 interaction with clouds is modeled using a cloud overlap algorithm.
 
@@ -326,23 +330,22 @@ stabilize the output. The 0300 and 0900 hour outputs, and 1500 and
 hour analysis.
 
 AIRS is on a 1:30 pm equator ascending overpass orbit while ECMWF
-analyses/forecast outputs are typically at 3 hour intervals (or 8 per
-day) starting at 00.00 GMT.  We match the closest in time and space
-set of geophysical parameters to each AIRS observation, with the
-ground observing geolocation points coming from the AIRS L1B
-data. Examinations of the match-ups confirms that the profile versus
-observed (latitude,longitudes) are within 0.125\mydeg $\pm$ 0.05\mydeg
-of each other; the time differences are approximately uniformly
-distributed within $\pm$ 1.5 hours. The standard SARTA wrapper ingests
-the same NWP set of geophysical parameters, and handles atmospheric
-gases such as water vapor and ozone point profiles (typically in ppmv
-or g/g) by integrating over a finer grid and saving the resultant
-layer averages (in molecules/cm2) as input to SARTA. The user can
-adjust the profiles of an additional handful of "variable" atmospheric
-gases such as carbon dioxide (\cd), nitrous oxide (\nit), carbon
-monoxide (\co), methane (\ch), sulphur dioxide (\so), and nitric
-acid (\hno); the profiles for other radiatively minor "fixed" gases
-such as chloro-fluoro-carbons (CFCs) come from a US Standard Profile.
+analyses/forecast are output at 3 hour intervals (8 per day) starting
+at 00.00 GMT.  The closest in time and space geophysical parameters
+are matched to each AIRS observation, using the AIRS L1B ground
+observing geolocation points.  This means the profile versus observed
+(latitude,longitudes) matchups are within 0.125\mydeg $\pm$ 0.05\mydeg
+of each other, while the time differences are al,ost uniformly
+distributed within $\pm$ 1.5 hours. We ingest the NWP
+set of geophysical parameters, integrates the water vapor and ozone
+point profiles (typically in ppmv or g/g) over a finer grid and saves
+the resultant layer averages (in molecules/cm2) as input to SARTA. We
+can also adjust profiles of an additional handful of "variable"
+atmospheric gases such as carbon dioxide (\cd), nitrous oxide (\nit),
+carbon monoxide (\co), methane (\ch), sulphur dioxide (\so), and
+nitric acid (\hno); the profiles for other radiatively minor "fixed"
+gases such as chloro-fluoro-carbons (CFCs) come from a US Standard
+Profile.
 
 \subsection{Radiative Transfer Models}
 
@@ -356,19 +359,19 @@ atmosphere is represented within the AIRS 100 pressure layer scheme
 top level (TOA) for the model.
 
 The first RT model is the Stand Alone Radiative Transfer Algorithm
-(SARTA). The clear sky version (with gray cloud switches) is used for
+(SARTA). The clear sky version (with gray cloud capability) is used in
 the NASA AIRS Level 2 retrievals. Given a realistic Earth geophysical
-profile (including temperature and humidity), layer optical depths are
-generated using pre-computed predictor coefficients
-\citep{aum:02*2,str:02*2,str:06*1} The spectroscopy used in the model
-comes from our line-by-line model \textsf{KCARTA}) \citep{mac:02*1},
-using HITRAN 2008 database \citep{rot:04} line parameters, \cd line
-mixing and water vapor continuum coefficients. Both models have been
-validated during dedicated AIRS validation campaigns. The campaigns
-provided enough observational data to demonstrate the need to modify
-the MT-CKD v1.0 continuum \citep{clo:95*1,clo:05} in the window
-regions; the resulting coefficients are very simiar to those of the
-recently released MT-CKD v2.5 model. 
+profile, layer optical depths are generated using pre-computed
+predictor coefficients \citep{aum:02*2,str:02*2,str:06*1} The
+spectroscopy used in the model comes from our line-by-line model
+\textsf{KCARTA}) \citep{mac:02*1}, using HITRAN 2008 database
+\citep{rot:04} line parameters, \cd line mixing and water vapor
+continuum coefficients. Both models have been validated during
+dedicated AIRS validation campaigns. The campaigns provided enough
+observational data to demonstrate the need to modify the MT-CKD v1.0
+continuum \citep{clo:95*1,clo:05} in the window regions; the resulting
+coefficients are very simiar to those of the recently released MT-CKD
+v2.5 model.
 
 A number of scattering algorithms have already been interfaced with
 SARTA by other authors \cite{niu:07}. We chose to handle clouds and
@@ -409,32 +412,33 @@ where the clouds can occupy any or all of the 100 AIRS layers, and the
 second which models the clouds as one or two slabs in the atmosphere
 column. 
 
-The SARTA TwoSlab (2S) model is computationally simpler and quicker
-than the 100-layer scattering model, as it needs at most two
-scattering slabs which represent the clouds/aerosols in the
-atmosphere. The $N$ level NWP cloud vertical profiles
-are replaced by one or two randomly overlapping slabs, achieved by
-integrating the NWP cloud liquid and cloud ice water content
-(CLWC,CIWC) profiles (in g/g) to obtain the column loading (in
-g/$m^2$). A routine has been written to change the NWP profile
-representation of clouds into slabs; the slab cloud top/bottom
-pressures are found as a compromise between placing the slab around
-the most prominent cloud profile peak versus using the peak of an
-effective weighting function due to the cloud profile itself (ie
-ignoring the atmospheric gas contribution). The latter effectively
-shifts the slab placement vertically upwards from the peak of the
-(CLWC,CIWC) profiles. Depending on the details of the cloud profiles,
-this usually reduces the ice and water cloud profiles to a (high) ice
-cloud and a (low) water cloud. Typically we change the NWP fields into
-two slab layers for 12150 AIRS observations (one 6 minute granule)
-within about 3 minutes on a 2.8 GHz processor.
+\subsubsection{TwoSlab conversion}
+
+The SARTA TwoSlab (SARTA 2S) model is computationally simpler and
+quicker than the 100-layer scattering model, as it needs at most two
+scattering slabs which represent the clouds/ aerosols in the
+atmosphere. The $N$ level NWP cloud vertical profiles are replaced by
+one or two randomly overlapping slabs, achieved by integrating the NWP
+cloud liquid and cloud ice water content (CLWC,CIWC) profiles (in g/g)
+to obtain the column loading (in g/$m^2$). A routine has been written
+to change the NWP profile representation of clouds into slabs; the
+slab cloud top/bottom pressures are found as a compromise between
+placing the slab around the most prominent cloud profile peak versus
+using the peak of an effective weighting function due to the cloud
+profile itself (ie ignoring the atmospheric gas contribution). The
+latter effectively shifts the slab placement vertically upwards from
+the peak of the (CLWC,CIWC) profiles. Depending on the details of the
+cloud profiles, this usually reduces the ice and water cloud profiles
+to a (high) ice cloud and a (low) water cloud. For a 6 minute AIRS
+granule, the NWP fields are processed into two slab layers within
+about 3 minutes on a 2.8 GHz processor.
 
 Figure \ref{slab12} shows two examples of slab cloud
 outputs.  The left panel is the simpler case where the NWP cloud
 profile (in blue) is singly peaked. The right panel shows a case where
 the profiles are much more complex; as discussed in a later section the
 placement of the slabs is shown to be very favorable for computing TOA
-radiances. In each case the horizontal extent of the cyan/magenta slabs
+radiances. The horizontal extent of the cyan/magenta slabs
 are proportional to the integrated cloud profile.
 
 \begin{figure}[h]
@@ -470,6 +474,8 @@ it an efficent model for an operational retrieval, but it
 cannot be used for computing heating rates since the fluxes are
 discontinuous at the slab boundaries.
 
+\subsubsection{Maximum Random Overlap conversion}
+
 The alternate cloud modelling method is the SARTA 100 layer, where the
 $N$ level NWP cloud profile for water or ice is converted to a layer
 cloud loading (in g/m2) at each of the 100 AIRS layers; the particle
@@ -496,36 +502,18 @@ again temperature dependent, based on the parametrization in
 25-50 sub-columns using MRO \citep{chen:13}; the final result is an
 average over these sub-columns.
 
-\subsection{Cloud Model Differences}
+\subsection{Cloud Model Differences - TwoSlab versus MRO}
 
-In this subsection we examine differences in radiances computed using
-the two cloud models. The PCRTM model was run only in the 100 layer
-maximal random cloud overlap mode, while the SARTA model could be run
-by changing the NWP cloud profile to two slabs or using the 100
-maximal random overlap cloud layers :
-\begin{itemize} 
-  \item SARTA TwoSLAB mode (default, hereafter referred to as SARTA 2S), where the NWP model fields are
-    reduced to two slabs, with fractional cloud coverage coming from a
-    weighting the cloud cover field with the ice or liquid cloud contents,
-  \item SARTA TwoSLAB 440 mb mode, where the NWP model fields are
-     modified/combined to ensure that ground to 440 mb contains cloud
-     water content, and from 440 mb to TOA contains cloud ice content, before
-     reducing to two slabs; fractional cloud coverage as above, 
-  \item SARTA100 overlap, where the NWP profile is taken as is; any overlap is
-     dealt with by combining ice cloud and water cloud parameters; $N$=25
-     sub columns used, and 
-  \item SARTA100 overlap 440 mb mode, where the NWP profile model fields are 
-     modified/combined to ensure that ground to
-     440 mb is always cloud water content, and from 440 mb to TOA is always
-     cloud ice content; this ensures no ice and water cloud in the same layer;
-     $N$=25 sub columns used; this is the closest approximation to the PCRTM
-     cloud processing routine, and
-  \item PCRTM 100 overlap 440 mb mode, as described above.
-\end{itemize} 
-Focusing on the 1231 \wn channel, the radiance calculations for all
-the above models were statistically analyzed using probability
-distribution functions (pdfs), where in this paper the pdfs are contructed using
-1 K wide bins.  
+We briefly examine radiances computed using the codes, primarily to
+ensure differences are attributed mostly to the coud representation
+method (TwoSlab versus Maximum Random Overlap) instead of the
+scattering models (PCLSAM versus DISORT). The PCRTM model was run only
+in the 100 layer maximal random cloud overlap mode, while the SARTA
+model could be run by changing the NWP cloud profile to two slabs or
+using the 100 maximal random overlap cloud layers. Focusing on the
+1231 \wn channel, the radiance calculations were statistically
+analyzed using probability distribution functions (pdfs), where in
+this paper the pdfs are contructed using 1 K wide bins.
 
 For two observed variables $X$ and $Y$ and their respective normalized
 pdfs $f(x), g(y)$ defined over the $K$-bins interval $z_1,z_2, \;
@@ -553,96 +541,32 @@ Cloud is present, the channel can measure radiances equivalent to
 brightness temperatures as low as 210 K (or lower). This large dynamic
 range in the 1231 \wn channel should also be captured in calculations
 using the NWP fields. Figure \ref{SvsPalloceanPDF} shows the pdfs for
-nighttime, over all oceans, while the statistics for nighttime (area
-weighted) global and tropical all-sky simulations are shown in Table
-\ref{table:SvsP}. Ones sees that
+nighttime, over all oceans, from which one sees that
 
 \begin{itemize} 
   \item the pdfs span the expected $\sim$ 200-330 K range,
-  \item the moments of the pdfs for the maximal random overlap simulations,
-        namely PCRTM, SARTA100 overlap and SARTA100 440mb, are all very
-        similar to one another, 
-  \item the moments of the pdfs for the two slab simulations, namely SARTA 2S and SARTA 2S 440 mb 
-         are very similar to one another, 
-  \item the moments for the two slab versus the 100 layer models are different from one another.
-        For example the second moments(standard deviation) are typically larger for the SARTA 2S 
-        model, while the fourth moments (kurtosis) are typically smaller for the SARTA 2S model, and
   \item there are features at $\sim$ 250 K and 273 K, which are later shown to be associated with 
-        NWP surface temperatures in the polar regions.
+        NWP surface temperatures in the polar regions (see section \ref{All-Sky})
 \end{itemize}
 
-The skill score is a quantitative measure of how similar two pdfs are
-to each other; in Table \ref{table:SvsP}, the comparisons in each
-category were against the SARTA 2S model, and again show the models
-clump into "slab" versus "MRO" categories.  In other words, the
-statistical behavior of the pdfs of the three MRO schemes are
-consistent with each other; similarly the statistical behavior of the
-pdf moments of the two TwoSlab schemes are also consistent with each other;
-however there are differences between the MRO and SARTA 2S schemes.  For
-example over the tropical oceans, the standard deviations for the two
-slab schemes are on the order of 14.5 K, while that for the 100 layer
-MRO schemes is about 12-13 K; similarly the skewness for the tropical
-oceans is about -2.7 K for the twoslab scheme and about -3.2 K for the
-100 layer maximal random overlap scheme.
+Examining the pdfs and skill scores for the maximal random overlap simulations,
+we confirmed that PCRTM 100 overlap and SARTA 100 overlap are very similar to one
+another, while those of the TwoSlab versus the 100 layer models are
+different from one another.
 
 \begin{figure}[h]
-\noindent\includegraphics[width=20pc]{FIGS/ecm_cloudBT1231_gev_ocean_SvsP}
+\noindent\includegraphics[width=20pc]{FIGS/ecm_cloudBT1231_gev_ocean_SvsP2A}
 \caption{Simulated 1231 \wn channel Brightness Temperatures for the 2011/03/11 nighttime
-overpasses of the AIRS instrument. The pdfs are for the 4 different flavors of SARTA
-simulations, along with the PCRTM simulation.}
+overpasses of the AIRS instrument. The pdfs are for SARTA 2S and PCRTM MRO simulations.}
 \label{SvsPalloceanPDF} 
 \end{figure}
 
-\begin{center}
-\begin{table*}[ht]
-{\small
-\hfill{}
-\begin{tabular}{cccccccccccc} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
-  REGION/CNT    & O/C & MEAN  & STD & SKEW & KURT & MAX & MIN & MEDIAN & MODE & SKILL \\
-\hline
-TROPICS  OCEAN   & SARTA 2S & 286.58 & 14.23  & -2.70 & 11.42 & 299.64 & 188.71 & 291.72 & 294.00 &  1.00 \\
-              & SARTA 2S 440mb & 286.39 & 14.69  & -2.67 & 10.95 & 299.64 & 191.68 & 291.79 & 293.84 &  0.99\\ 
-   218494        & PCRTM & 287.90 & 11.85  & -3.28 & 16.68 & 299.73 & 184.42 & 291.51 & 294.00 &  0.92 \\
-              & SARTA100 overlap & 287.90 & 12.93  & -3.32 & 16.39 & 299.65 & 185.42 & 291.98 & 294.00 &  0.94\\ 
-              & SARTA100 440mb & 287.78 & 13.22  & -3.30 & 16.02 & 299.65 & 184.98 & 291.99 & 294.17 &  0.95 \\
-\hline
- TROPICS LAND   & SARTA 2S & 275.92 & 16.76  & -1.34 &  4.63 & 299.66 & 191.33 & 281.09 & 292.00 &  1.00 \\
-              & SARTA 2S 440mb & 275.48 & 17.22  & -1.31 &  4.49 & 299.53 & 194.04 & 280.83 & 292.00 &  0.97\\ 
-   52364        & PCRTM & 277.44 & 15.19  & -1.52 &  5.78 & 299.52 & 190.78 & 281.67 & 289.00 &  0.95 \\
-              & SARTA100 overlap & 276.80 & 16.37  & -1.56 &  5.71 & 299.36 & 189.08 & 281.73 & 289.00 &  0.96 \\
-              & SARTA100 440mb & 276.56 & 16.70  & -1.56 &  5.61 & 299.36 & 189.18 & 281.65 & 289.00 &  0.96 \\
-\hline \hline
-  REGION/CNT    & O/C & MEAN  & STD & SKEW & KURT & MAX & MIN & MEDIAN & MODE & SKILL \\
-\hline
-ALL  OCEAN   & SARTA 2S & 277.92 & 16.89  & -1.08 &  3.75 & 299.65 & 188.71 & 282.35 & 294.64 &  1.00 \\
-              & SARTA 2S 440mb & 277.67 & 17.30  & -1.09 &  3.70 & 299.65 & 191.68 & 282.21 & 294.00 &  0.98\\ 
-   447846        & PCRTM & 279.06 & 15.29  & -1.07 &  3.93 & 299.73 & 184.28 & 283.36 & 294.50 &  0.94 \\
-              & SARTA100 overlap & 278.98 & 15.98  & -1.13 &  4.12 & 299.66 & 185.28 & 283.73 & 294.30 &  0.97\\ 
-              & SARTA100 440mb & 278.72 & 16.36  & -1.13 &  4.05 & 299.66 & 184.98 & 283.67 & 294.00 &  0.97 \\
-\hline
-ALL  LAND   & SARTA 2S & 260.51 & 21.55  & -0.25 &  2.13 & 299.71 & 187.15 & 261.55 & 292.00 &  1.00 \\
-              & SARTA 2S 440mb & 260.13 & 21.72  & -0.22 &  2.08 & 299.71 & 186.79 & 261.29 & 292.00 &  0.98\\ 
-   130299        & PCRTM & 261.36 & 21.37  & -0.32 &  2.19 & 299.64 & 188.65 & 262.87 & 288.00 &  0.97 \\
-              & SARTA100 overlap & 260.94 & 21.63  & -0.29 &  2.15 & 299.72 & 186.76 & 262.28 & 289.00 &  0.98 \\
-              & SARTA100 440mb & 260.75 & 21.71  & -0.28 &  2.13 & 299.72 & 186.15 & 262.01 & 289.00 &  0.98 \\
-\hline %inserts single line
-\end{tabular}}
-\hfill{}
-\caption{All-Sky scenes : TwoSlab vs 100layer nighttime. The skill scores are all with respect to the SARTA 2S
-results, hence those scores are always unity}
-\label{table:SvsP} % is used to refer this table in the text
-\end{table*}
-\end{center}
-
 \section{Summary of Statistical differences between Observations and Calculations} 
 
-Having examined the similarities and differences between the radiative
-transfer models and cloud representation schemes, in this section we
-analyze AIRS observations and calculated radiances, again mostly using
-pdf comparisons. We focus on the 1231 \wn channel, and also include a section where
-we discuss results over the entire AIRS spectrum, using a representative subset of
-AIRS channels.
+In this section we analyze AIRS observations and calculated radiances,
+again mostly using pdf comparisons. We focus on the 1231 \wn channel,
+and also include a section where we discuss results over the entire
+AIRS spectrum, using a representative subset of AIRS channels.
 
 \subsection{Clear-Sky (cloud-free) Scenes} 
 \label{Clear-Sky}
@@ -796,6 +720,7 @@ ability of our simulation system to accurately ingest the cloud fields
 and output radiances.
 
 \subsubsection{General Differences - Global}
+\label{All-Sky}
 
 Figure \ref{bt1231_obs_sartaslab} shows the 1231 \wn BTs for the night
 time overpasses on 2011/03/11. The plotted data are averaged over a 1
@@ -911,7 +836,8 @@ NIGHT LAND    & OBS   & 257.68 & 22.70  & -0.22 &  2.26 & 299.45 & 188.68 & 257.
 \begin{figure}[h]
 \noindent\includegraphics[width=20pc]{FIGS/ecm_cloudBT1231_gev_land_ocean}
 \caption{Nighttime All-Sky 1231 \wn channel Brightness Temperatures : obs vs cal PDFs.
-Top panel : Ocean; bottom panel : land. The horizontal axis are BT 231 bins (1 K wide). SARTA 2S is used; there is no noticeable
+Top panel : Ocean; bottom panel : land. The horizontal axis are BT 231 bins 
+(1 K wide). SARTA 2S is used; there is no noticeable
 difference if MODIS effective water cloud diameters are used.}
 \label{bt1231_night_allsky_land_ocean}
 \end{figure}
@@ -938,87 +864,15 @@ being slightly lower), so even if ice emissivities were used for
 surface temperatures below 273 K over "ocean" and the pdfs for the
 polar regions combined into one, there would still be a domination of
 the 250 and 273 K surface temperatures producing the two peaks seen in
-the simulations, relative to the AIRS observations. These nighttime
-ocean statistics are summarized in Table \ref{table:georegions_ocean},
-while nighttime land statistics are shown in Table
-\ref{table:georegions_land}.
-
-\begin{center}
-\begin{table*}[ht]
-{\small
-\hfill{}
-\begin{tabular}{cccccccccccc} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
- REGION/CNT    & O/C & MEAN  & STD & SKEW & KURT & MAX & MIN & MEDIAN & MODE & SKILL \\
-\hline %inserts single line
-N.POLAR   & OBS   & 246.49 &  9.46  &  0.72 &  3.84 & 280.30 & 212.80 & 244.94 & 242.00 &  1.00 \\
-   123511        & PCRTM & 250.82 &  9.05  &  0.93 &  3.63 & 280.28 & 211.66 & 248.37 & 247.35 &  0.69\\ 
-              & SARTA & 250.34 &  9.13  &  0.86 &  4.08 & 280.19 & 211.16 & 248.24 & 248.66 &  0.69 \\
-\hline %inserts single line
-N. MIDLAT      & OBS   & 266.15 & 14.50  & -0.74 &  3.10 & 292.03 & 213.68 & 269.27 & 273.00 &  1.00 \\
-   117302        & PCRTM & 271.32 & 11.15  & -0.89 &  3.69 & 292.03 & 226.45 & 273.35 & 275.00 &  0.83 \\
-              & SARTA & 270.27 & 13.41  & -1.07 &  3.85 & 292.03 & 213.21 & 273.54 & 275.01 &  0.84 \\
-\hline
-TROPICS   & OBS   & 285.44 & 15.68  & -2.56 & 10.32 & 299.08 & 188.17 & 291.39 & 295.00 &  1.00 \\
-   356665        & PCRTM & 287.88 & 11.84  & -3.28 & 16.68 & 299.73 & 184.28 & 291.48 & 294.00 &  0.87\\ 
-              & SARTA & 286.60 & 14.20  & -2.71 & 11.48 & 299.65 & 188.71 & 291.69 & 294.00 &  0.94 \\
-\hline
-S. MIDLAT   & OBS   & 270.92 & 14.54  & -0.66 &  3.10 & 296.38 & 200.17 & 273.09 & 275.18 &  1.00 \\
-   232602        & PCRTM & 275.31 & 11.11  & -0.83 &  4.26 & 296.27 & 208.17 & 275.82 & 272.00 &  0.83\\ 
-              & SARTA & 274.61 & 12.79  & -1.01 &  4.30 & 296.46 & 209.89 & 276.10 & 271.10 &  0.86 \\
-\hline
-S.POLAR   & OBS   & 255.65 &  9.16  & -0.72 &  3.83 & 276.29 & 217.70 & 256.64 & 258.00 &  1.00 \\
-   106382        & PCRTM & 263.13 &  8.44  & -1.35 &  4.51 & 276.61 & 226.68 & 265.87 & 270.00 &  0.57\\ 
-              & SARTA & 260.65 & 11.45  & -1.20 &  3.61 & 278.59 & 214.82 & 265.24 & 270.72 &  0.60 \\
-\hline %inserts single line
-\end{tabular}}
-\hfill{}
-\caption{Nighttime All-Sky ocean scenes : Different Geographic Regions}
-\label{table:georegions_ocean} % is used to refer this table in the text
-\end{table*}
-\end{center}
+the simulations, relative to the AIRS observations. 
 
 \begin{figure}[h]
 \noindent\includegraphics[width=22pc]{FIGS/ecm_cloudBT1231_gev_trop_midlat_poles}
 \caption{All-Sky, over ocean 1231 \wn channel Brightness Temperatures : obs vs cal PDFs. 
-The horizontal axis are BT 231 bins (1 K wide), Top panel : tropics; middle panel : midlatitudes; bottom panel : polar regions}
+The horizontal axis are BT 231 bins (1 K wide), Top panel : tropics; 
+middle panel : midlatitudes; bottom panel : polar regions}
 \label{bt1231_night_allsky_ocean_trop_midlat_poles}
 \end{figure}
-
-\begin{center}
-\begin{table*}[ht]
-{\small
-\hfill{}
-\begin{tabular}{ccccccccccc} % centered columns (4 columns)
-\hline\hline %inserts double horizontal lines
- REGION/CNT    & O/C & MEAN  & STD & SKEW & KURT & MAX & MIN & MEDIAN & MODE & SKILL \\
-\hline %inserts single line
-N. POLAR  & OBS   & 239.62 & 12.12  & -0.20 &  2.58 & 266.69 & 207.25 & 240.20 & 242.06 &  1.00 \\
-   49022        & PCRTM & 240.28 & 11.92  &  0.16 &  2.57 & 270.66 & 188.65 & 239.89 & 241.00 &  0.88\\ 
-              & SARTA & 240.31 & 11.75  &  0.14 &  2.65 & 270.64 & 187.15 & 240.01 & 240.00 &  0.88 \\
-\hline
- N.MIDLAT     & OBS   & 257.01 & 12.54  & -0.28 &  2.78 & 287.92 & 211.83 & 256.77 & 252.90 &  1.00 \\
-   78124        & PCRTM & 259.33 & 11.40  & -0.39 &  2.85 & 285.78 & 209.79 & 259.76 & 257.00 &  0.90 \\
-              & SARTA & 258.74 & 12.25  & -0.51 &  3.07 & 285.78 & 207.07 & 259.32 & 257.00 &  0.92 \\
-\hline
-TROPICS   & OBS   & 271.58 & 20.88  & -1.16 &  3.85 & 299.45 & 188.17 & 278.74 & 292.00 &  1.00 \\
-   85702        & PCRTM & 277.50 & 15.05  & -1.52 &  5.76 & 299.64 & 190.70 & 281.68 & 289.00 &  0.84 \\
-              & SARTA & 275.99 & 16.62  & -1.33 &  4.62 & 299.71 & 191.33 & 281.08 & 291.05 &  0.89 \\
-\hline
-S. MIDLAT   & OBS   & 277.18 & 20.37  & -2.14 &  6.89 & 295.38 & 199.27 & 285.63 & 290.99 &  1.00 \\
-   6286        & PCRTM & 280.65 & 16.26  & -2.79 & 11.10 & 294.19 & 199.80 & 285.65 & 286.00 &  0.79 \\ 
-              & SARTA & 279.66 & 17.08  & -2.43 &  8.92 & 294.07 & 203.25 & 285.70 & 286.00 &  0.81 \\
-\hline
-S. POLAR   & OBS   & 231.20 & 14.16  & -0.18 &  1.88 & 270.61 & 200.29 & 232.87 & 243.00 &  1.00 \\
-   122518        & PCRTM & 233.94 & 12.66  & -0.10 &  2.00 & 269.56 & 206.02 & 234.95 & 245.00 &  0.87 \\
-              & SARTA & 233.77 & 12.46  & -0.09 &  2.04 & 269.52 & 206.09 & 234.73 & 242.00 &  0.87 \\
-\hline %inserts single line
-\end{tabular}}
-\hfill{}
-\caption{Nighttime All-Sky land scenes : Different Geographic Regions}
-\label{table:georegions_land} % is used to refer this table in the text
-\end{table*}
-\end{center}
 
 The statistics for each granule in general indicate a negative mean
 bias, implying that the calculations are too hot either because of
@@ -1061,8 +915,7 @@ being affected by daytime Non-local thermodynamic equilibrium effects
 issues. 
 
 Figure \ref{ecm_allsky_41chan_biasNstd} shows the global weighted
-night time means and standard
-deviations of the results. The red curves are all-sky biases, while blue
+night time means of the results. The red curves are all-sky biases, while blue
 is the clear sky subset with clear sky calculations; green are
 calculations for the clear sky subset, but including the NWP cloud
 fields. The shaded gray regions indicate temperature sounding (\cd)
@@ -1105,44 +958,39 @@ and variability due to clouds impacting a significant part of the
 weighting function for these lower altitude channels.
 
 A summary of the mean AIRS observations, and biases using SARTA 2S
-and/or PCRTM MRO is presented in three tables in the Appendix. The
+and/or PCRTM MRO is presented in two tables in the Appendix. The
 tables focus on nightime ocean observations, and are divided into
-tropical, mid-latitude and polar. The first table (Table
-\ref{table:night_clear2}) in the Appendix summarizes the clear-sky
-biases betwenn AIRS and the two RTAs. One sees that the tuned SARTA
-biases are typically smaller than the PCRTM biases; in general the
-SARTA clear-sky biases are on the order of -0.5 K, except in the 10\um
-ozone region where they are notably larger, which as mentioned in
-Section \ref{Clear-Sky}, translates to the NWP ozone fields being
-about 10\% too low.
-
-The second table (Table \ref{table:night_all2}) in the Appendix shows
+tropical, mid-latitude and polar. The first table (Table \ref{table:night_all2}) in the Appendix shows
 how the AIRS all-sky observations compare to clear-sky calculations;
 this is a measure of the cloud forcing (though opposite in sign) as a
-function of wavenumber. The largest differences are in the surface and
-tropospheric channels, being about -10 K in the thermal windows
-(surface channels), -5 K in the tropospheric channels and -2 K in the
-high altitude channels. One also sees the variability in the AIRS
-observations is largest in the surface channels and smallest in the
-high altitude channels.
+function of wavenumber. The cloud forcing is converted to equivalent
+Brightness Temperature differences (BTD), and the largest differences
+are in the surface and tropospheric channels, being about -10 K in the
+thermal windows (surface channels), -5 K in the tropospheric channels
+and -2 K in the high altitude channels. The smallest mean forcings
+in the window regions occurs in the tropics. One also sees the variability
+in the AIRS observations is largest in the surface channels and
+smallest in the high altitude channels.
 
-Finally the third table (Table \ref{table:night_allbias2}) in the Appendix shows how the all-sky
-calculations compare to the all-sky observations. As is evident from
-the red and magenta curves of Figure \ref{ecm_allsky_41chan_biasNstd},
-the biases are on the order of about 1-2 K, though the variability is
-large, especially for the channels sounding lower in the atmosphere.
-Exploratory work done using the NWP fields as a first guess indicate a
-temperature(z), water vapor(z) and cloud parameter retrieval can be
-used to reduce the biases and standard deviations.
+The second table (Table \ref{table:night_allbias2}) in the Appendix
+shows how the all-sky calculations compare to the all-sky
+observations. The red and magenta curves of Figure
+\ref{ecm_allsky_41chan_biasNstd} demonstrate the biases are on the
+order of about 1-2 K, though the variability is large : $\sim$ 10-15 K
+for window channels, 10 K for lower troposphere channels and about 2-3
+K for channels that are sensitive to the upper atmosphere, above the
+clouds. Exploratory work done using the NWP fields as a first guess
+indicate a temperature(z), water vapor(z) and cloud parameter
+retrieval can be used to reduce the biases and standard deviations.
 
 \begin{figure}[h]
-\noindent\includegraphics[width=20pc]{FIGSORIG_Dec2013/ecm_allsky_41chan_biasNstdV2.jpg}
+\noindent\includegraphics[width=20pc]{FIGS/ecm_allsky_41chan_biasNstdV2.jpg}
 \caption{Horizontal axis shows AIRS channel center frequency while
-vertical axis shows biases between night time global observations and all-sky
+vertical axis shows biases between night time observations and all-sky
 calculations.  The red (magenta) curve is for SARTA 2S (PCRTM MRO) 
-all-sky calculations and shows the largest biases and standard deviations;
+all-sky calculations and shows the largest biases;
 the blue curve is clear-sky calculations compared to filtered AIRS
-clear scenes, and shows the smallest biases and standard deviations. 
+clear scenes, and shows the smallest biases. 
 The green curve shows biases when the calculations for the clear sky observations include
 the NWP cloud fields.}
 \label{ecm_allsky_41chan_biasNstd} 
@@ -1290,32 +1138,22 @@ lines in the thermal window region. Daily Aqua MODIS L3 product
 (Collection 5.1) can provide ancillary infomation for locations of these
 MBL clouds.
 
-Figure \ref{marine_clouds} shows the difference between ECMWF skin
-temperatures and AIRS observations.  The colocated Moderate Resolution
-Imaging Spectroradiometer (MODIS) L3 cloud products in the boxed
-regions indicate that the retrieved cloud fraction is unity with cloudtops
-ranging between 800-900 mb; further perusal of MODIS L3 products
-confirms these regions are dominated by water clouds. With a lapse
+Examining the difference between ECMWF skin temperatures and AIRS observations in the
+1231 \wn channel, and correlating against colocated Moderate Resolution
+Imaging Spectroradiometer (MODIS) L3 cloud products, shows that for March 11, 2011
+there are at least two large regions where the retrieved cloud fraction of water clouds
+is unity with cloudtops ranging between 800-900 mb; these are off the California and
+S.W. African coasts. Assuming a lapse
 rate of about 6 K/km, the cloud top height means the diffrenece
 between a clear observation and a pixedl with a MBL cloud could be as
-small as 5 K. For the $\sim$ 14000 pixels in the boxed regions, the
+small as 5 K. For the $\sim$ 14000 pixels in these regions, the
 skill comparisons between 1231 \wn observations and calcuations were
 abouit 0.75/0.69 for PCRTM and SARTA 2S respectively; the mean
 observations were 285.3 $\pm$ 9.56 K while the calculations were
 warmer; 287.74 $\pm$ 4.26 K for PCRTM and 289.6 $\pm$ 3.69 K for SARTA
 2S.
 
-\begin{figure}[h]
-\noindent\includegraphics[width=20pc]{FIGS/marine_obs}
-\caption{Difference between surface temperatures and AIRS BT1231 observations;
-the boxes show the over ocean regions where BT1231 temperatures are
-about 10-20 K lower than surface temperatures; corresponding MODIS L3
-daily data shows the cloud retrievals in these regions have
-approximately unity cloud fraction and cloud top pressures between
-800-900 mb.  } 
-\label{marine_clouds} \end{figure}
-
-We focus on the boxed area off Namibia (AIRS granule 137). First, as
+We focus on the area off Namibia (AIRS granule 137). First, as
 discussed in Section \ref{ECMWF_cloud}, a cloud slab coincides with
 the peak of the NWP liquid profile when the cloud profile has one
 peak. To exploit this, we selected 2200 observations where the cloud
@@ -1355,26 +1193,24 @@ respectively.
 Deep convective clouds (DCC) are relatively easy to identify from
 infrared observations, as they have high cloud tops which are
 optically thick and therefore radiate at low temperatures (210 K or
-less) \citep{aum:11}. Individual Deep Convective Clouds are not well
-represented by NWP grids, as they focus on averaging and
+less) \citep{aum:11}. NWP model focus on averaging and
 re-distributing the energies and moisture within their grid cells -
 the ECMWF references state that the convection scheme does not predict
 individual DCC, but rather models the physical effects. However one
 would expect the simulations using NWP fields to statistically
 resemble the actual AIRS observations.
 
-The AIRS observations for 03/11/2011 show that the locations of deep
-convection (cold cloud tops) were over the Amazon and Tropical West
-Pacific (as well just off the top of S. America). Especially during the
-nightime, there were far more observed DCC (eg over the Amazon) than
-calculated; however, in general there is spatial agreement between
-calculations and observations.  Table \ref{table:dcc_stats} shows the
-number of observations and simulations satisfying the BT1231 $\le$ 210
-K criteria in the tropics; there were far fewer calculated DCC clouds
-over land.  Compared to the observations, SARTA2S typically simulated
-about half as many DCC, and an even smaller fraction for nighttime
-over land; the MRO simulation are very similar to the SARTA 2S
-simulations.
+AIRS observations showed the locations of deep convection were over
+the Amazon (as well just off the top of S. America) and Tropical West
+Pacific . Especially during the nightime, there were far more observed
+DCC (eg over the Amazon) than calculated; however, in general there is
+spatial agreement between calculations and observations.  Table
+\ref{table:dcc_stats} shows the number of observations and simulations
+satisfying the BT1231 $\le$ 210 K criteria in the tropics; there were
+far fewer calculated DCC clouds over land.  Compared to the
+observations, SARTA2S typically simulated about half as many DCC, and
+an even smaller fraction for nighttime over land; the MRO simulation
+are very similar to the SARTA 2S simulations.
 
 \begin{center}
 \begin{table*}[ht]
@@ -1459,10 +1295,10 @@ roughly overlay the observed DCC.
 
 Figure \ref{dcc_pdf} shows the observed and calculated BT1231 pdfs for
 observations in the Tropical West Pacific. The correlation between the
-observed and both calculated pdfs is about 0.65. The y-axis is plotted
-on a logarithmic scale, in order to show the under-representation of
-deep convective clouds (cold top) in the simulations, starting at
-about 245 K and going downto about 200 K (thin gray vertical line).
+observed and both of the calculated pdfs is about 0.65. The y-axis is plotted
+on a logarithmic scale, to show the under-representation of
+deep convective clouds (cold top) in the simulations below about 245 K 
+(thin gray vertical line).
 
 \begin{figure}[h]
 \noindent\includegraphics[width=20pc]{FIGS/ecm_cloudBT1231_gev_dcc}
@@ -1486,46 +1322,14 @@ velocities at higher altitudes. An examination of the $\omega$ fields
 showed that on average where the biases were small (ie between -20 K
 and 0 K), the vertical velocities at both the 300 mb and 500 mb
 pressure levels were negative ($\sim$ -2 Pa/s at 300 mb), while for
-larger biases the velocities were closer to zero.
-
-We then investigated the relationship between vertical velocity and
-forecast timestep for every DCC FOV (about 733 pixels) in granule
-039. By offsetting the AIRS observed time in steps of 3 hours, we
-co-located the corresponding ECMWF model fields for all 8 ECMWF
-analyses/forecasts. The DCC were then separated into three categories
-based on 1231 \wn bias : best, good, worst.  "Best" were the FOVS with
-a BT1231 bias closest to 0 K (here we mark this off as biases $\ge$
--20 K), "bad" had a bias $\le$ -50 K and "ok" were theose
-in-between. The $\omega_{500}$ velocities (in Pa/s) averaged for these
-three categories as a function of difference in observation time are
-shown in Fig \ref{dcc_day_twp_obs_w500_manyspotsG039}. The shaded
-error bar shows the standard deviation of the velocities, divided by a
-factor of 10. The fraction of DCC in the "best" "ok" and "bad"
-categories were about 0.24, 0.24, 0.51 respectively.  The default
-match up for this granule was approximately one hour prior to the
-observation time, shown as a vertical gray bar.
-
-We see that the best category (blue) had significant
-average upward vertical velocities at both the closest in time, and
-subsequent time steps (as large as -7 Pa/second), while the "bad"
-cases had close to zero vertical velocities at any time. The
-in-between ("ok") cases showed evidence of convection starting either too
-late and/or with a lower speed compared to the "best"
-cases. These results suggest on average there was not enough convection in the
+larger biases the velocities were closer to zero. Examination of
+vertical velocities as a function of analysis/forecast timestep (every 3 hours for
+March 11, 2011) confirmed that the FOVS with the smallest bias had the
+largest upward  $\omega_{500}$  vertical velocities ((as large as -7 Pa/second)
+while those with large biases had close to zero vertical velocities at any time. 
+These results suggest on average there was not enough convection in the
 model and/or started too late to produce the observed number of DCC
 clouds.
-
-\begin{figure}[h]
-\noindent\includegraphics[width=20pc]{FIGS/dcc_day_twp_obs_w500_manyspotsG039}
-\caption{Vertical velocities at 500 mb (in Pa/s) versus the (NWP-observation) time in hours, for AIRS Granule 
-039 in the TWP.  For this granule the closest in time ECMWF file was
-approximately one hour before the observations. The blue, green and
-red curves correspond to separating the BT1231 DCC observations into
-three groups according to the calculated bias; one sees that when the
-biases are smallest (blue curve), the NWP fields show more convection
-than when biases are largest (red curve).}
-\label{dcc_day_twp_obs_w500_manyspotsG039} 
-\end{figure}
 
 \subsubsection{DCC Radiative Forcing}
 
@@ -1636,86 +1440,13 @@ regions, rather than clear-sky regions only.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Appendix} 
 
-The following tables shows the night time clear scene statistics for
-the AIRS observations versus SARTA and PCRTM simulations. Table
-\ref{table:night_clear2} shows comparisons between clear-sky AIRS observations
-and clear-sky SARTA/PCRTM calculations.  The SARTA calculations are
-closer to the observations as we use the tuned model.  Spectral biases
-are typically less than about -0.5 K, except in the ozone region where
-they are noticeably larger; a +10\% column adjustment is typically
-sufficient to rectify that.
-
-\begin{center}
-\begin{table*}[ht]
-{\footnotesize
-\hfill{}
-\begin{tabular}{c|ccc|ccc|ccc} % centered columns (4 columns)
-Wavenumber & AIRS   & PCRTM    & SARTA    & AIRS   & PCRTM    & SARTA    & AIRS   & PCRTM    & SARTA \\
-cm-1       & OBS (K)& BIAS (K) & BIAS (K) & OBS (K)& BIAS (K) & BIAS (K) & OBS (K)& BIAS (K) & BIAS (K) \\
-           &        & TRP      &          &        & MIDLAT   &          &        & POLAR    &       \\
-\hline
-659.23 & 217.4$\pm$1.5 &  0.9$\pm$0.8 &  0.3$\pm$0.7 & 221.4$\pm$2.2 &  0.6$\pm$0.7 &  0.3$\pm$0.7 & 218.4$\pm$6.6 &  0.5$\pm$0.7 &  0.4$\pm$0.7 \\ 
-662.45 & 232.9$\pm$1.0 & -0.6$\pm$0.6 & -0.2$\pm$0.6 & 232.4$\pm$2.8 & -0.5$\pm$0.6 & -0.2$\pm$0.6 & 228.3$\pm$4.0 & -0.5$\pm$0.6 & -0.1$\pm$0.6 \\ 
-701.26 & 222.8$\pm$1.8 & -0.9$\pm$0.5 & -0.2$\pm$0.4 & 222.7$\pm$2.1 & -0.5$\pm$0.5 & -0.1$\pm$0.4 & 220.4$\pm$4.7 & -0.1$\pm$0.4 &  0.1$\pm$0.4 \\ 
-728.05 & 264.1$\pm$2.7 & -0.9$\pm$0.8 & -0.1$\pm$0.5 & 257.9$\pm$5.8 & -0.7$\pm$0.8 &  0.0$\pm$0.4 & 247.3$\pm$2.6 & -0.4$\pm$0.5 & -0.2$\pm$0.4 \\ 
-740.89 & 240.8$\pm$2.3 & -0.5$\pm$0.7 & -0.2$\pm$0.4 & 237.0$\pm$3.5 & -0.3$\pm$0.6 & -0.1$\pm$0.4 & 230.9$\pm$3.1 & -0.1$\pm$0.4 & -0.1$\pm$0.4 \\ 
-754.26 & 265.1$\pm$3.0 & -0.8$\pm$0.8 & -0.1$\pm$0.6 & 260.3$\pm$4.5 & -0.5$\pm$0.7 &  0.2$\pm$0.5 & 252.8$\pm$1.8 & -0.2$\pm$0.5 &  0.1$\pm$0.4 \\ 
-790.23 & 293.1$\pm$2.3 & -0.6$\pm$0.8 & -0.4$\pm$0.8 & 285.3$\pm$6.2 & -0.3$\pm$0.6 & -0.3$\pm$0.6 & 271.5$\pm$1.9 & -0.4$\pm$0.5 & -0.4$\pm$0.4 \\ 
-791.65* & 274.5$\pm$8.0 & -0.7$\pm$7.7 & -0.1$\pm$7.7 & 268.3$\pm$10.4 & -0.9$\pm$9.1 & -0.4$\pm$9.0 & 259.7$\pm$10.9 &  0.2$\pm$10.9 &  0.4$\pm$10.9 \\ 
-\hline
-822.26 & 294.3$\pm$2.2 & -0.6$\pm$0.8 & -0.4$\pm$0.7 & 286.3$\pm$6.1 & -0.4$\pm$0.6 & -0.2$\pm$0.6 & 272.4$\pm$2.0 & -0.4$\pm$0.6 & -0.3$\pm$0.4 \\ 
-899.87 & 295.5$\pm$2.0 & -0.3$\pm$0.7 & -0.3$\pm$0.7 & 287.1$\pm$6.4 & -0.1$\pm$0.8 & -0.1$\pm$0.8 & 272.9$\pm$1.9 & -0.1$\pm$0.5 & -0.1$\pm$0.5 \\ 
-960.95 & 296.2$\pm$2.0 & -0.2$\pm$0.5 & -0.3$\pm$0.5 & 287.6$\pm$6.4 &  0.0$\pm$0.4 & -0.0$\pm$0.4 & 273.3$\pm$1.9 &  0.1$\pm$0.3 &  0.1$\pm$0.3 \\ 
-961.35 & 296.1$\pm$2.0 & -0.2$\pm$0.5 & -0.3$\pm$0.5 & 287.4$\pm$6.4 &  0.0$\pm$0.4 & -0.0$\pm$0.4 & 273.2$\pm$1.9 &  0.1$\pm$0.3 &  0.1$\pm$0.3 \\ 
-\hline
-999.98 & 290.2$\pm$2.1 & -0.6$\pm$0.6 & -0.4$\pm$0.5 & 281.5$\pm$6.9 & -0.5$\pm$0.5 & -0.4$\pm$0.4 & 267.9$\pm$1.6 & -0.4$\pm$0.3 & -0.3$\pm$0.3 \\ 
-1008.62 & 286.2$\pm$2.3 & -0.9$\pm$0.6 & -0.8$\pm$0.5 & 276.6$\pm$7.8 & -0.8$\pm$0.6 & -0.7$\pm$0.5 & 262.0$\pm$1.9 & -0.8$\pm$0.6 & -0.7$\pm$0.5 \\ 
-1014.75 & 278.9$\pm$2.5 & -1.6$\pm$0.8 & -1.4$\pm$0.6 & 269.9$\pm$7.9 & -1.5$\pm$0.7 & -1.2$\pm$0.5 & 255.7$\pm$3.0 & -1.4$\pm$0.8 & -1.2$\pm$0.7 \\ 
-1024.09 & 273.6$\pm$3.0 & -1.8$\pm$0.9 & -1.4$\pm$0.7 & 263.5$\pm$8.9 & -1.6$\pm$0.9 & -1.3$\pm$0.6 & 247.8$\pm$4.7 & -1.6$\pm$1.1 & -1.4$\pm$0.9 \\ 
-1033.14 & 271.1$\pm$3.0 & -2.1$\pm$1.0 & -1.6$\pm$0.7 & 261.4$\pm$8.8 & -1.8$\pm$0.9 & -1.4$\pm$0.6 & 246.3$\pm$4.9 & -1.8$\pm$1.1 & -1.4$\pm$0.9 \\ 
-1046.07 & 274.6$\pm$2.9 & -1.5$\pm$0.9 & -1.0$\pm$0.6 & 264.5$\pm$8.9 & -1.3$\pm$0.8 & -0.9$\pm$0.5 & 248.7$\pm$4.8 & -1.3$\pm$1.0 & -0.8$\pm$0.8 \\ 
-\hline
-1129.46 & 295.3$\pm$2.0 & -0.3$\pm$0.5 & -0.3$\pm$0.5 & 286.3$\pm$6.7 & -0.1$\pm$0.4 & -0.1$\pm$0.4 & 271.8$\pm$1.8 & -0.0$\pm$0.3 & -0.0$\pm$0.3 \\ 
-1226.54 & 290.6$\pm$2.7 & -0.7$\pm$0.7 & -0.4$\pm$0.6 & 283.9$\pm$5.3 & -0.4$\pm$0.6 & -0.2$\pm$0.5 & 271.8$\pm$1.9 & -0.1$\pm$0.3 & -0.1$\pm$0.3 \\ 
-1231.19 & 295.6$\pm$2.0 & -0.5$\pm$0.5 & -0.4$\pm$0.5 & 286.8$\pm$6.4 & -0.3$\pm$0.4 & -0.2$\pm$0.4 & 272.5$\pm$1.9 & -0.2$\pm$0.3 & -0.1$\pm$0.3 \\ 
-\hline
-1329.61 & 274.3$\pm$5.1 & -0.5$\pm$0.9 & -0.3$\pm$0.9 & 269.6$\pm$4.7 & -0.3$\pm$1.0 & -0.1$\pm$0.9 & 262.5$\pm$2.2 & -0.1$\pm$0.7 & -0.1$\pm$0.7 \\ 
-1344.15 & 277.5$\pm$5.0 & -0.6$\pm$1.0 & -0.5$\pm$0.9 & 272.7$\pm$4.6 & -0.3$\pm$1.0 & -0.1$\pm$0.9 & 265.2$\pm$2.0 & -0.1$\pm$0.6 & -0.1$\pm$0.6 \\ 
-1387.61 & 244.7$\pm$5.4 & -0.9$\pm$1.0 &  0.6$\pm$1.0 & 240.9$\pm$4.6 & -0.7$\pm$1.2 &  0.6$\pm$1.1 & 236.0$\pm$2.6 &  0.1$\pm$1.2 &  1.2$\pm$1.3 \\ 
-1413.85 & 270.2$\pm$6.4 &  0.1$\pm$1.1 & -0.3$\pm$1.1 & 265.1$\pm$5.9 &  0.4$\pm$1.2 &  0.1$\pm$1.2 & 258.3$\pm$3.1 &  0.8$\pm$1.1 &  0.3$\pm$1.1 \\ 
-1419.57 & 233.2$\pm$4.4 & -0.5$\pm$1.0 &  0.6$\pm$1.0 & 230.9$\pm$3.4 & -0.4$\pm$1.0 &  0.6$\pm$1.0 & 227.7$\pm$2.3 &  0.5$\pm$1.0 &  1.1$\pm$1.0 \\ 
-1421.87 & 262.5$\pm$7.0 & -0.5$\pm$1.1 &  0.2$\pm$1.1 & 257.1$\pm$6.4 & -0.3$\pm$1.4 &  0.4$\pm$1.4 & 250.4$\pm$3.6 &  0.3$\pm$1.4 &  0.8$\pm$1.4 \\ 
-1463.15 & 254.9$\pm$7.0 & -0.7$\pm$1.2 &  0.5$\pm$1.1 & 249.6$\pm$6.3 & -0.5$\pm$1.5 &  0.6$\pm$1.4 & 242.9$\pm$3.6 &  0.4$\pm$1.5 &  1.3$\pm$1.6 \\ 
-1560.75 & 232.2$\pm$4.8 &  0.1$\pm$1.4 &  0.7$\pm$1.4 & 229.5$\pm$3.8 &  0.1$\pm$1.3 &  0.5$\pm$1.3 & 225.9$\pm$2.7 &  0.9$\pm$1.3 &  1.1$\pm$1.3 \\ 
-\hline
-2182.16 & 285.6$\pm$2.2 & -0.8$\pm$0.6 &  0.1$\pm$0.4 & 277.6$\pm$6.4 & -0.4$\pm$0.6 &  0.5$\pm$0.4 & 264.4$\pm$1.7 & -0.3$\pm$0.5 &  0.4$\pm$0.5 \\ 
-2183.06 & 283.7$\pm$2.4 & -1.0$\pm$0.7 &  0.4$\pm$0.6 & 275.7$\pm$6.6 & -0.4$\pm$0.8 &  1.0$\pm$0.6 & 262.4$\pm$1.8 & -0.4$\pm$0.8 &  0.6$\pm$0.7 \\ 
-2183.97 & 283.9$\pm$2.2 & -0.9$\pm$0.6 &  0.0$\pm$0.4 & 276.1$\pm$6.3 & -0.5$\pm$0.6 &  0.4$\pm$0.3 & 263.2$\pm$1.8 & -0.3$\pm$0.4 &  0.3$\pm$0.4 \\ 
-2193.08 & 278.4$\pm$2.4 & -1.0$\pm$0.6 & -0.0$\pm$0.3 & 270.5$\pm$6.4 & -0.7$\pm$0.6 &  0.3$\pm$0.3 & 257.6$\pm$1.9 & -0.5$\pm$0.4 &  0.3$\pm$0.3 \\ 
-2202.26 & 271.0$\pm$2.8 & -1.5$\pm$0.7 &  0.1$\pm$0.3 & 263.0$\pm$6.7 & -1.1$\pm$0.7 &  0.4$\pm$0.3 & 249.9$\pm$2.4 & -0.8$\pm$0.5 &  0.2$\pm$0.3 \\ 
-2390.82 & 273.9$\pm$2.8 & -0.7$\pm$0.7 &  0.1$\pm$0.2 & 266.0$\pm$6.8 & -0.5$\pm$0.7 &  0.1$\pm$0.2 & 252.9$\pm$2.6 & -0.0$\pm$0.5 & -0.2$\pm$0.3 \\ 
-\hline
-2418.56 & 290.4$\pm$2.4 & -0.4$\pm$0.5 & -0.0$\pm$0.3 & 280.8$\pm$7.1 & -0.3$\pm$0.4 &  0.1$\pm$0.3 & 265.8$\pm$1.9 & -0.1$\pm$0.3 &  0.2$\pm$0.3 \\ 
-2603.38 & 297.5$\pm$2.2 & -0.1$\pm$0.4 & -0.2$\pm$0.4 & 287.7$\pm$6.8 & -0.0$\pm$0.4 & -0.0$\pm$0.4 & 272.8$\pm$1.9 & -0.0$\pm$0.3 & -0.0$\pm$0.3 \\ 
-2607.60 & 295.1$\pm$2.0 &  0.1$\pm$0.4 & -0.1$\pm$0.4 & 286.6$\pm$6.2 &  0.2$\pm$0.4 &  0.1$\pm$0.4 & 272.8$\pm$1.9 &  0.1$\pm$0.3 &  0.1$\pm$0.3 \\ 
-2616.09 & 298.0$\pm$2.2 & -0.1$\pm$0.4 & -0.1$\pm$0.4 & 288.2$\pm$6.8 &  0.0$\pm$0.4 & -0.0$\pm$0.4 & 273.2$\pm$1.9 &  0.0$\pm$0.3 & -0.0$\pm$0.3 \\ 
-2622.50 & 294.8$\pm$2.0 &  0.1$\pm$0.4 & -0.1$\pm$0.4 & 286.4$\pm$6.1 &  0.2$\pm$0.4 &  0.1$\pm$0.4 & 272.7$\pm$1.9 &  0.1$\pm$0.3 &  0.1$\pm$0.3 \\ 
-2637.58 & 294.6$\pm$2.0 &  0.1$\pm$0.4 & -0.1$\pm$0.4 & 286.2$\pm$6.1 &  0.3$\pm$0.4 &  0.2$\pm$0.4 & 272.6$\pm$1.9 &  0.2$\pm$0.3 &  0.2$\pm$0.3 \\ 
-\hline
-\end{tabular}}
-\hfill{}
-\caption{Night time clear ocean scenes; all units in Kelvin}
-\label{table:night_clear2} % is used to refer this table in the text
-\end{table*}
-\end{center}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Table \ref{table:night_all2} shows comparisons between all-sky AIRS observations
-and clear-sky SARTA/PCRTM calculations, thus painting a spectral picture of the 
-cloud forcing (albeit with a negative sign). One sees the cloud forcing is largest
-(on the order of 10 K) in the thermal infrared windows, and least in the high altitude channels. 
+The following tables shows the night time statistics for the AIRS
+observations versus SARTA and PCRTM simulations.  Table
+\ref{table:night_all2} shows comparisons between all-sky AIRS
+observations and clear-sky SARTA/PCRTM calculations, thus painting a
+spectral picture of the cloud forcing (albeit with a negative
+sign). The cloud forcing is largest (on the order of 10 K) in the
+thermal infrared windows, and least in the high altitude channels.
 
 \begin{center}
 \begin{table*}[ht]
@@ -1784,13 +1515,12 @@ cm-1       & OBS (K)& BIAS (K) & BIAS (K) & OBS (K)& BIAS (K) & BIAS (K) & OBS (
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 Table \ref{table:night_allbias2} shows comparisons between all-sky
-AIRS observations and all-sky SARTA/PCRTM calculations. One sees the
-all-sky biases are muich larger than the clear-sky biases, due to a
-combination of inaccurately representing the cloud fields as they are
-represented in the NWP scheme, and with cloud parametrization problems
-in the NWP itself. A dedicated retrieval scheme can be be used to
-improve the biases. The 791 \wn channel is starred since it
-occasionally had bad data.
+AIRS observations and all-sky SARTA/PCRTM calculations. The all-sky
+biases are larger than the clear-sky biases, due to a combination of
+inaccurately representing the cloud fields as represented in the NWP
+scheme, and with cloud parametrization problems in the NWP itself. A
+dedicated retrieval scheme can be be used to improve the biases. The
+791 \wn channel is starred since it occasionally had bad data.
 
 \begin{center}
 \begin{table*}[ht]

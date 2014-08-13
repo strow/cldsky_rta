@@ -1,0 +1,478 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2013.3.5)  13 AUG 2014 16:32
+entering extended mode
+\write18 enabled.
+**paper.tex
+(./paper.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(./aguplus.cls
+Document Class: aguplus 1999/08/19 1.6b (PWD)
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\@maxsep=\dimen103
+\@dblmaxsep=\dimen104
+ (./agupp.sty
+AGU preprint substyle, v5.01 <August 3, 1998>.
+\saveparindent=\dimen105
+\@cprtype=\count87
+\@slugcmmntwidth=\dimen106
+\@temptokenb=\toks14
+\c@cureqno=\count88
+\c@plate=\count89
+\lecurrentfam=\count90
+\affilnum=\count91
+\totalaffils=\count92
+\@temptokena=\toks15
+\@temptokenb=\toks16
+\pt@ncol=\count93
+\pt@width=\dimen107
+\ampcount=\count94
+\tabbox=\box26
+\totaltabdp=\dimen108
+\insidetablewd=\dimen109
+\finalcolcount=\count95
+\tabwidth=\dimen110
+\labnum=\count96
+\labloopnum=\count97
+\tablebox=\box27
+\tabnotecount=\count98
+\loopnotecount=\count99
+)
+\@fmwidth=\dimen111
+\@abstract=\box28
+\@title=\box29
+\pt@box=\box30
+\pt@width=\dimen112
+\pt@line=\count100
+\pt@nlines=\count101
+\pt@ncol=\count102
+\wpt@width=\dimen113
+LaTeX Info: Redefining \cite on input line 961.
+\c@NAT@ctr=\count103
+\oldvsize=\dimen114
+) (/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(/usr/share/texmf/tex/latex/tools/xspace.sty
+Package: xspace 1997/10/13 v1.06 Space after command names (DPC)
+)
+(/usr/share/texmf/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen117
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen118
+\subfiglabelskip=\skip46
+\c@subfigure=\count105
+\c@lofdepth=\count106
+\c@subtable=\count107
+\c@lotdepth=\count108
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+) (./paper.aux)
+\openout1 = `paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count109
+\scratchcounter=\count110
+\scratchtoks=\toks18
+\scratchdimen=\dimen119
+\scratchskip=\skip49
+\scratchmuskip=\muskip10
+\scratchbox=\box31
+\scratchread=\read1
+\scratchwrite=\write3
+\zeropoint=\dimen120
+\onepoint=\dimen121
+\onebasepoint=\dimen122
+\minusone=\count111
+\thousandpoint=\dimen123
+\onerealpoint=\dimen124
+\emptytoks=\toks19
+\nextbox=\box32
+\nextdepth=\dimen125
+\everyline=\toks20
+\!!counta=\count112
+\!!countb=\count113
+\recursecounter=\count114
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen126
+\MPnumerator=\count118
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 67.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 67.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 80.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 80.
+ [1{/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+
+]
+Overfull \hbox (4.23071pt too wide) in paragraph at lines 142--160
+[]\OT1/cmr/m/n/10 Conversely in-stru-ments on board Earth-orbiting satel-
+ []
+
+
+Overfull \hbox (5.42514pt too wide) in paragraph at lines 205--216
+[]\OT1/cmr/m/n/10 Data from the At-mo-spheric Infra-Red Sounder (AIRS)
+ []
+
+[2]
+Overfull \hbox (42.75858pt too wide) in paragraph at lines 292--299
+\OT1/cmr/m/n/10 has 5 com-po-nent mod-els (see for ex-am-ple http:// www.ecmwf.
+int/
+ []
+
+[3]
+Overfull \hbox (4.82799pt too wide) in paragraph at lines 361--375
+\OT1/cmr/m/n/10 in the model comes from our line-by-line model \OT1/cmss/m/n/10
+ KCARTA\OT1/cmr/m/n/10 )
+ []
+
+
+Overfull \hbox (1.25854pt too wide) in paragraph at lines 361--375
+\OT1/cmr/m/n/10 Both mod-els have been val-i-dated dur-ing ded-i-cated AIRS
+ []
+
+[4]
+Overfull \hbox (4.9453pt too wide) in paragraph at lines 417--435
+ \OT1/cmr/bx/n/10 2.4.1. TwoSlab con-ver-sion \OT1/cmr/m/n/10 The SARTA TwoSlab
+
+ []
+
+<FIGS/clouds_profileG040_271_321.pdf, id=65, 402.50375pt x 333.245pt>
+File: FIGS/clouds_profileG040_271_321.pdf Graphic file (type pdf)
+
+<use FIGS/clouds_profileG040_271_321.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (27.92366pt too wide) in alignment at lines 462--465
+ [] [] [] [] 
+ []
+
+[5 <./FIGS/clouds_profileG040_271_321.pdf>]
+Overfull \hbox (1.674pt too wide) in paragraph at lines 507--517
+\OT1/cmr/m/n/10 ter-ing mod-els (PCLSAM ver-sus DIS-ORT). The PCRTM
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 547.
+
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 547.
+
+<FIGS/ecm_cloudBT1231_gev_ocean_SvsP2A.pdf, id=76, 400.49625pt x 313.17pt>
+File: FIGS/ecm_cloudBT1231_gev_ocean_SvsP2A.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_cloudBT1231_gev_ocean_SvsP2A.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (6.20296pt too wide) in paragraph at lines 574--586
+[]\OT1/cmr/m/n/10 The nigh-t-ime over-passes of 2011/03/11 yielded slightly
+ []
+
+[6] <FIGS/ecm_clearBT1231v2.pdf, id=83, 416.55624pt x 334.24875pt>
+File: FIGS/ecm_clearBT1231v2.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_clearBT1231v2.pdf> [7 <./FIGS/ecm_cloudBT1231_gev_ocean_SvsP2A.pd
+f> <./FIGS/ecm_clearBT1231v2.pdf>]
+Overfull \hbox (6.27246pt too wide) in paragraph at lines 665--674
+[]\OT1/cmr/m/n/10 Geographically, both the day-time and night-time colum
+ []
+
+<FIGS/ecm_clearBT1231_pdf.pdf, id=103, 425.59pt x 326.21875pt>
+File: FIGS/ecm_clearBT1231_pdf.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_clearBT1231_pdf.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<FIGS/bt1231_obs_sartaslabV2.pdf, id=104, 853.1875pt x 341.275pt>
+File: FIGS/bt1231_obs_sartaslabV2.pdf Graphic file (type pdf)
+
+<use FIGS/bt1231_obs_sartaslabV2.pdf> [8 <./FIGS/ecm_clearBT1231_pdf.pdf>]
+<FIGS/ecm_cloudBT1231_gev_land_ocean.pdf, id=114, 401.5pt x 315.1775pt>
+File: FIGS/ecm_cloudBT1231_gev_land_ocean.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_cloudBT1231_gev_land_ocean.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./FIGS/bt1231_obs_sartaslabV2.pdf>]
+<FIGS/ecm_cloudBT1231_gev_trop_midlat_poles.pdf, id=124, 396.48125pt x 315.1775
+pt>
+File: FIGS/ecm_cloudBT1231_gev_trop_midlat_poles.pdf Graphic file (type pdf)
+ <use FIGS/ecm_cloudBT1231_gev_trop_midlat_poles.pdf>
+Overfull \hbox (24.06363pt too wide) in paragraph at lines 870--873
+[] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10 <./FIGS/ecm_cloudBT1231_gev_land_ocean.pdf> <./FIGS/ecm_cloudBT1231_gev_tro
+p_midlat_poles.pdf>]
+Overfull \hbox (2.14742pt too wide) in paragraph at lines 937--947
+\OT1/cmr/m/n/10 junc-tion with ded-i-cated cam-paigns, and in gen-eral shows
+ []
+
+[11] <FIGS/ecm_allsky_41chan_biasNstdV2.jpg, id=143, 936.49875pt x 702.625pt>
+File: FIGS/ecm_allsky_41chan_biasNstdV2.jpg Graphic file (type jpg)
+
+<use FIGS/ecm_allsky_41chan_biasNstdV2.jpg> [12 <./FIGS/ecm_allsky_41chan_biasN
+stdV2.jpg>]
+Overfull \hbox (0.61847pt too wide) in paragraph at lines 1141--1155
+[]\OT1/cmr/m/n/10 Examining the dif-fer-ence be-tween ECMWF skin tem-
+ []
+
+[13] <FIGS/ecm_cloudBT1231_gev_marine_zoom.pdf, id=151, 405.515pt x 309.155pt>
+File: FIGS/ecm_cloudBT1231_gev_marine_zoom.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_cloudBT1231_gev_marine_zoom.pdf>
+Overfull \hbox (6.7929pt too wide) in paragraph at lines 1250--1258
+ \OT1/cmr/bx/n/10 7.2.1. Pat-terns of Hor-i-zon-tal and Ver-ti-cal Wind
+ []
+
+<FIGS/dcc_twp_obs_sartaV2.pdf, id=152, 768.8725pt x 314.17375pt>
+File: FIGS/dcc_twp_obs_sartaV2.pdf Graphic file (type pdf)
+
+<use FIGS/dcc_twp_obs_sartaV2.pdf> [14 <./FIGS/ecm_cloudBT1231_gev_marine_zoom.
+pdf>] <FIGS/ecm_cloudBT1231_gev_dcc.pdf, id=162, 413.545pt x 331.2375pt>
+File: FIGS/ecm_cloudBT1231_gev_dcc.pdf Graphic file (type pdf)
+
+<use FIGS/ecm_cloudBT1231_gev_dcc.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (10.4609pt too wide) in paragraph at lines 1313--1318
+ \OT1/cmr/bx/n/10 7.2.2. Mag-ni-tudes and Tim-ings of Ver-ti-cal Wind
+ []
+
+
+Overfull \hbox (10.2029pt too wide) in paragraph at lines 1319--1333
+[]\OT1/cmr/m/n/10 For cloud tops to reach close to, or past, the tropopause,
+ []
+
+[15 <./FIGS/dcc_twp_obs_sartaV2.pdf>]
+<FIGS/ecm_cloudBT1231_gev_dcc_cloudforceVSgridsize.pdf, id=172, 423.5825pt x 32
+6.21875pt>
+File: FIGS/ecm_cloudBT1231_gev_dcc_cloudforceVSgridsize.pdf Graphic file (type 
+pdf)
+ <use FIGS/ecm_cloudBT1231_gev_dcc_cloudforceVSgridsize.pdf> [16 <./FIGS/ecm_cl
+oudBT1231_gev_dcc.pdf> <./FIGS/ecm_cloudBT1231_gev_dcc_cloudforceVSgridsize.pdf
+>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1455.
+
+Overfull \hbox (29.1947pt too wide) in paragraph at lines 1454--1510
+[]  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1454--1510
+
+ []
+
+
+Overfull \hbox (11.9306pt too wide) in paragraph at lines 1528--1584
+[]  []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1528--1584
+
+ []
+
+(./paper.bbl
+Underfull \hbox (badness 1783) in paragraph at lines 10--15
+[]\OT1/cmr/m/n/10 Allan, R., A. Slingo, S. Mil-ton, and I. Cul-ver-
+ []
+
+[17]
+Underfull \hbox (badness 1412) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 and S. Han-non, kCARTA: An at-mo-spheric ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 dia-tive trans-fer al-go-rithm us-ing com-pressed
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 lookup ta-bles, \OT1/cmr/m/it/10 Tech. rep.\OT1/cmr/m/n/10 , Un
+i-ver-sity of Mary-
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 land Bal-ti-more County, De-part-ment of Physics,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 http://asl.umbc.edu/pub/packages/kcarta.html,
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 112--116
+[]\OT1/cmr/m/n/10 De Souza-Machado, S., et al., In-frared re-trievals
+ []
+
+
+Underfull \hbox (badness 6542) in paragraph at lines 112--116
+\OT1/cmr/m/n/10 of dust us-ing AIRS: com-par-isons of op-ti-cal
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 112--116
+\OT1/cmr/m/n/10 dust storm to other col-lo-cated EOS A-Train
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 112--116
+\OT1/cmr/m/n/10 and sur-face ob-ser-va-tions, \OT1/cmr/m/it/10 J. Geo-phys. Res
+.\OT1/cmr/m/n/10 , p.
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 160--165
+\OT1/cmr/m/n/10 from Space us-ing Backscat-ter-ing and Ther-mal
+ []
+
+[18]
+Underfull \hbox (badness 1127) in paragraph at lines 231--235
+[]\OT1/cmr/m/n/10 Saunders, R., T. Black-more, B. Candy, P. Fran-
+ []
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 231--235
+\OT1/cmr/m/n/10 cis, and T. Hewi-son, Mon-i-tor-ing Satel-lite Ra-
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 238--243
+\OT1/cmr/m/it/10 Cli-mate Sci-ence for Serv-ing So-ci-ety : Re-searc,
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 246--250
+[]\OT1/cmr/m/n/10 Stamnes, K., S.-C. Tsay, W. Wis-combe, and
+ []
+
+) [19] [20] [21] (./paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 1935 strings out of 94500
+ 23221 string characters out of 1176767
+ 120612 words of memory out of 1000000
+ 5106 multiletter control sequences out of 10000+50000
+ 9372 words of font info for 33 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 1000
+ 29i,9n,25p,221b,381s stack positions out of 1500i,500n,5000p,200000b,5000s
+PDF statistics:
+ 217 PDF objects out of 300000
+ 0 named destinations out of 131072
+ 61 words of extra memory for PDF output out of 65536
+</usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.
+pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1
+/bluesky/cm/cmss10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr
+/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/s
+hare/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesk
+y/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsl10.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/c
+m/cmmi9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy
+6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts
+/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb>
+Output written on paper.pdf (21 pages, 1361690 bytes).

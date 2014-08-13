@@ -1,0 +1,19 @@
+# git ignore file
+
+*.bib             # no tex junk
+*.bbl
+*.aux
+*.log             # no log files
+*.core            # no coredumps
+*.ppt
+*.pdf
+*.m
+
+# backup files
+*.bak
+*~
+
+
+# dirs
+OLDVERSIONS
+PDF_PAPERS
