@@ -1,0 +1,7 @@
+# undo ignoring the pdf files
+
+!*.pdf
+!*.fig
+!*.png
+!*.jpg
+
