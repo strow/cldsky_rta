@@ -1,19 +1,31 @@
-# git ignore file
+#
+# latex gitignore file
+#
 
-*.bib             # no tex junk
-*.bbl
+# data & misc
+*.h5
+*.dat
+*.hdf
+*.mat
+*.core
+*.rtp
+
+# tex work files
+*.bib
+auto
 *.aux
-*.log             # no log files
-*.core            # no coredumps
-*.ppt
-*.pdf
-*.m
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.snm
+*.toc
+*.dvi
+*.pdfsync
+*.synctex.gz
 
-# backup files
-*.bak
 *~
 
-
-# dirs
-OLDVERSIONS
-PDF_PAPERS
